@@ -1,0 +1,47 @@
+1 рівень
+
+do {
+r=north()
+} while (r==true)
+
+2 рівень
+
+do {
+r=east()
+} while (r==true)
+
+3 рівень
+
+do {
+    south();
+    r=east();
+} while (r==true)
+
+4 рівень
+
+do {
+  if (isFree("south")) {
+    r=south();
+  }
+  else {
+    r=east();
+  }
+} while (r==true)
+
+5 рівень
+
+var n;
+do {
+  if (isFree("south") & (n!='n')) {
+    r=south(); n='s'; continue;
+  }
+  else if (isFree("east") & (n!='w')) {
+    r=east(); n='e'; continue;
+  }
+  else if (isFree("west") & (n!='e')) {
+    r=west(); n='w'; continue;
+  }
+  else {
+    r=north(); n='n'; continue;
+  }
+} while (r==true)
