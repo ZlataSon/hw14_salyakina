@@ -1,0 +1,41 @@
+1 рівень
+
+north()
+north()
+
+2 рівень
+
+for (var i = 0; i < 16; i++) east()
+
+3 рівень
+
+for (var i = 0; i < 16; i++) {south(); east()}
+
+4 рівень
+
+for (var i = 0; i < 13; i++) {
+  if (isFree("south")) {
+    south();
+  }
+  else {
+    east();
+  }
+}
+
+5 рівень
+
+var n;
+for (var i = 0; i < 31; i++) {
+  if (isFree("south") & (n!='n')) {
+    south(); n='s'; continue;
+  }
+  else if (isFree("east") & (n!='w')) {
+    east(); n='e'; continue;
+  }
+  else if (isFree("west") & (n!='e')) {
+    west(); n='w'; continue;
+  }
+  else {
+    north(); n='n'; continue;
+  }
+}
